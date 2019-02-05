@@ -8,7 +8,7 @@ namespace StrongestLink
         static void Main(string[] args)
         {
             GameMain gm = new GameMain(6, 6, new int[] {18, 25, 23});
-            gm.setPassedPotAndPath(0, 4); //设置入口
+            gm.setPassedPotAndPath( 4); //设置入口
 
 
             gm.run(0);
@@ -63,8 +63,14 @@ namespace StrongestLink
             setPassedPot(a, b);
         }
 
+
+        public void setPassedPotAndPath(int a)
+        {
+            setPassedPotAndPath(0, a, true);
+        }
+
         //设置passedPot为true和path
-        public void setPassedPotAndPath(int p, int a)
+        private void setPassedPotAndPath(int p, int a)
         {
             setPassedPotAndPath(p, a, true);
         }
