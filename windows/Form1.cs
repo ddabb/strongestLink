@@ -17,21 +17,21 @@ namespace windows
             InitializeComponent();
             dataGridView1.CellClick += cellClick;
             dataGridView1.CellDoubleClick += doublecellClick;
-            button2.Click += button2_Click_1;
+            btnRun.Click += button2_Click_1;
         }
 
 
 
         private DataGridViewCell old;
-        private List<int> selectInts=new List<int>();
+        private List<int> selectInts = new List<int>();
         private int rowNum;
         private int columnNum;
- 
+
 
         private void cellClick(object sender, DataGridViewCellEventArgs e)
         {
             var value = -1;
-                Int32.TryParse(dataGridView1.CurrentCell.FormattedValue.ToString(),out value);
+            Int32.TryParse(dataGridView1.CurrentCell.FormattedValue.ToString(), out value);
 
 
             if (selectInts.Contains(value))
@@ -41,12 +41,12 @@ namespace windows
             }
             else
             {
-                if (value!=-1)
+                if (value != -1)
                 {
                     dataGridView1.CurrentCell.Style.BackColor = Color.Pink;
                     selectInts.Add(value);
                 }
-              
+
             }
 
             StringBuilder sb = new StringBuilder();
@@ -61,7 +61,7 @@ namespace windows
                 {
                     sb.AppendLine();
                     sb.AppendLine();
-                    sb.Append(rowNO+":  ");
+                    sb.Append(rowNO + ":  ");
                     rowNO++;
                     index = 0;
                 }
@@ -78,16 +78,16 @@ namespace windows
         private string analysis(int[] result)
         {
             List<string> direction = new List<string>();
-            for(int i=1;i<result.Length;i++)
+            for (int i = 1; i < result.Length; i++)
             {
                 var now = result[i];
-                    var before = result[i - 1];
+                var before = result[i - 1];
                 var text = "";
                 direction.Add(now > before ? (before + 1 == now ? "右" : "下") : (before - 1 == now ? "左" : "上"));
             }
 
 
-         
+
             StringBuilder sb = new StringBuilder();
             var index = 0;
             var rowNO = 1;
@@ -95,18 +95,18 @@ namespace windows
             foreach (var value in direction)
             {
 
-                sb.Append(value+",");
+                sb.Append(value + ",");
                 index++;
-                if(index==5)
+                if (index == 5)
                 {
                     sb.AppendLine();
                     sb.AppendLine();
                     rowNO++;
                     sb.Append(rowNO + ":  ");
-                
+
                     index = 0;
                 }
-              
+
 
             }
 
@@ -120,7 +120,7 @@ namespace windows
         {
             var value = -1;
             Int32.TryParse(dataGridView1.CurrentCell.FormattedValue.ToString(), out value);
-            if (value>-1&&selectInts.Contains(value))
+            if (value > -1 && selectInts.Contains(value))
             {
                 selectInts.Remove(value);
             }
@@ -222,6 +222,8 @@ namespace windows
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            txtDectrion.Text = "";
+
             GameMain gm = new GameMain(rowNum, columnNum, selectInts.ToArray());
             gm.setPassedPotAndPath(startNum); //设置入口
 

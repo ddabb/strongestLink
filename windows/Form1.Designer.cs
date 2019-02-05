@@ -37,7 +37,7 @@ namespace windows
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRun = new System.Windows.Forms.Button();
             this.btnInit = new System.Windows.Forms.Button();
             this.lblStart = new System.Windows.Forms.Label();
             this.lblRows = new System.Windows.Forms.Label();
@@ -144,7 +144,7 @@ namespace windows
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.button2);
+            this.splitContainer3.Panel1.Controls.Add(this.btnRun);
             this.splitContainer3.Panel1.Controls.Add(this.btnInit);
             this.splitContainer3.Panel1.Controls.Add(this.lblStart);
             this.splitContainer3.Panel1.Controls.Add(this.lblRows);
@@ -161,16 +161,16 @@ namespace windows
             this.splitContainer3.SplitterDistance = 105;
             this.splitContainer3.TabIndex = 0;
             // 
-            // button2
+            // btnRun
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(304, 61);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 27);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "运行";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRun.Location = new System.Drawing.Point(304, 61);
+            this.btnRun.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(70, 27);
+            this.btnRun.TabIndex = 19;
+            this.btnRun.Text = "运行";
+            this.btnRun.UseVisualStyleBackColor = true;
             // 
             // btnInit
             // 
@@ -295,7 +295,7 @@ namespace windows
         private SplitContainer splitContainer2;
         private DataGridView dataGridView1;
         private SplitContainer splitContainer3;
-        private Button button2;
+        private Button btnRun;
         private Button btnInit;
         private Label lblStart;
         private Label lblRows;
