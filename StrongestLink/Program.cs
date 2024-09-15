@@ -7,8 +7,8 @@ namespace StrongestLink
     {
         static void Main(string[] args)
         {
-            GameMain gm = new GameMain(6, 6, new int[] {18, 25, 23});
-            gm.setPassedPotAndPath( 4); //设置入口
+            GameMain gm = new GameMain(6, 6, new int[] { 18, 25, 23 });
+            gm.setPassedPotAndPath(4); //设置入口
 
 
             gm.run(0);
@@ -18,7 +18,7 @@ namespace StrongestLink
 
         }
 
-     
+
     }
     public class GameMain
     {
